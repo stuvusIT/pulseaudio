@@ -1,0 +1,13 @@
+# {{ ansible_managed }}
+[Unit]
+Description=PulseAudio
+
+[Service]
+ExecStartPre=-/usr/bin/pulseaudio --kill
+ExecStart=/usr/bin/pulseaudio
+User={{ pulseaudio_user }}
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
