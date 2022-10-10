@@ -4,7 +4,7 @@ Description=PulseAudio
 
 [Service]
 ExecStartPre=-/usr/bin/pulseaudio --kill
-ExecStart=/usr/bin/pulseaudio
+ExecStart=/usr/bin/pulseaudio --exit-idle-time=-1
 User={{ pulseaudio_user }}
 Restart=always
 RestartSec=10
